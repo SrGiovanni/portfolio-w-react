@@ -10,7 +10,6 @@ function ContactForm() {
   function handleChange(e) {
     if (e.target.name === 'email') {
       const isValid = validateEmail(e.target.value);
-      console.log(isValid);
       // isValid conditional statement
       if (!isValid) {
         setErrorMessage('Your email is invalid.');
@@ -41,24 +40,24 @@ function ContactForm() {
       <section>
         <h1>Contact me</h1>
         <form id="contact-form">
-          <div>
+          <div className='my-1 flex-column'>
             <label htmlFor="name">Name:</label>
             <input type="text" defaultValue={name} onBlur={handleChange} name="name" />
           </div>
-          <div>
+          <div className='my-1 flex-column'>
             <label htmlFor="email" >Email address:</label>
             <input type="email" name="email" defaultValue={email} onBlur={handleChange} />
           </div>
-          <div>
+          <div className='my-1 flex-column'>
             <label htmlFor="message">Message:</label>
             <textarea name="message" defaultValue={message} onBlur={handleChange} rows="5"  />
           </div>
           {errorMessage && (
-            <div>
+            <div className='my-1'>
               <p className="error-text">{errorMessage}</p>
             </div>
           )}
-          <button type="submit" onSubmit={handleSubmit}>Submit</button>
+          <button  className='my-1' type="submit" onSubmit={handleSubmit}>Submit</button>
         </form>
       </section>
     )

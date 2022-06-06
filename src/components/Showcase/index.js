@@ -4,7 +4,7 @@ import Project from "../Project";
 
 // project properties object template: { name: '', github: '', deployed: ''}
 
-function Showcase(props) {
+function Showcase() {
     const projects = [
         { name: '', github: '', deployed: ''}
     ]

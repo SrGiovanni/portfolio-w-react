@@ -1,62 +1,38 @@
-import React, { useEffect } from 'react';
+import { useEffect } from "react";
+import { NavLink, useLocation  } from 'react-router-dom';
 import { capitalizeFirstLetter } from '../../utils/helpers';
+import React from 'react';
 
-function Nav(props) {
-  const {
-    categories = [],
-    setCurrentCategory,
-    currentCategory
-    // contactSelected,
-    // setContactSelected
-  } = props;
+function Nav() {
 
-  useEffect(() => {
-    document.title = capitalizeFirstLetter(currentCategory.name);
-  }, [currentCategory]);
+    const location = useLocation().pathname;
+    console.log(location)
+    useEffect(() => {
+            const locationName = location === '/' ? "John's Profile": capitalizeFirstLetter(location.slice(1))
+        document.title = locationName;
+    }, [location]);
 
   return (
     <header className="flex-row px-1">
-      <h2>
-        <a data-testid="link" href="/">
+      <h1>
+        <a className="title" href="/">
           John Fulghieri
         </a>
-      </h2>
+      </h1>
       <nav>
-        <ul className="flex-row">
-          <li className={`mx-2 ${ currentCategory.name === "about me" && 'navActive'}`}>
-            <a data-testid="about" href="#about" onClick={() => {
-                //setContactSelected(false)
-                setCurrentCategory(categories[1])
-            }}>
-              About me
-            </a>
-          </li>
-          {categories.slice(2).map((category) => (
-              <li
-              className={`mx-1 ${
-                  //!contactSelected  &&
-                currentCategory.name === category.name &&  'navActive'
-                }`}
-              key={category.name}
-            >
-              <span onClick={() => {
-                  setCurrentCategory(category);
-                  //setContactSelected(false);
-                }}
-              >
-                {capitalizeFirstLetter(category.name)}
-              </span>
+        <ul className='navButtons flex-row' >
+            <li className={` navBtn mx-2`} >
+                <NavLink className='navBtnLink' to="/">About</NavLink>
             </li>
-          ))}
-          {/* <li className={`mx-2 ${ currentCategory.name === "contact" && 'navActive'}`}>
-            <span onClick={() => {
-                // contactSelected 
-                //setContactSelected(true)
-                setCurrentCategory(categories[1])
-            }}>
-                Contact
-            </span>
-          </li> */}
+            <li className={` navBtn mx-2`} >
+                <NavLink className='navBtnLink' to="/portfolio">Portfolio</NavLink>
+            </li>
+            <li className={` navBtn mx-2`} >
+                <NavLink className='navBtnLink' to="/contact">Contact</NavLink>
+            </li>
+            <li className={` navBtn mx-2`} >
+                <NavLink className='navBtnLink' to="/resume">Resume</NavLink>
+            </li>
         </ul>
       </nav>
     </header>
