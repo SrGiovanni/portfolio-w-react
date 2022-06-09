@@ -38,7 +38,7 @@ function ContactForm() {
   // JSX
   return (
       <section>
-        <h1>Contact me</h1>
+        <h2>Contact me</h2>
         <form id="contact-form">
           <div className='my-1 flex-column'>
             <label htmlFor="name">Name:</label>

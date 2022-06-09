@@ -13,13 +13,13 @@ function Nav() {
     }, [location]);
 
   return (
-    <header className="flex-row px-1">
+    <header className="flex-between px-1">
       <h1>
         <a className="title" href="/">
           John Fulghieri
         </a>
       </h1>
-      <nav>
+      <nav className="my-2">
         <ul className='navButtons flex-row' >
             <li className={` navBtn mx-2`} >
                 <NavLink className='navBtnLink' to="/">About</NavLink>

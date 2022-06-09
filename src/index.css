@@ -38,7 +38,7 @@ main {
 
 html,
 body {
-  min-height: 100%;
+  height: 100%;
 }
 
 body {
@@ -70,6 +70,8 @@ h6 {
 
 h1 {
   font-size: 2.25rem;
+  text-shadow: 2px 2px 3px black;
+  margin-left: 15px;
 }
 
 h2 {
@@ -171,6 +173,7 @@ nav a:hover {
 }
 
 nav  li {
+  text-shadow: 3px 2px 7px darkgray;
   cursor: pointer;
 }
 
@@ -198,8 +201,17 @@ textarea {
   flex-direction: column;
 }
 
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
 .space-between {
   justify-content: space-between;
+}
+
+.nowrap {
+  white-space: nowrap;
 }
 
 .flex-end {
@@ -314,3 +326,42 @@ a {
 .active {
   color: var(--secondary);
 }
+
+#myImg {
+  max-width: 300px;
+}
+
+.about-card {
+  border-radius: 90px 15px 15px;
+  padding: 2rem;
+  border-color: white;
+  border-width: 4px;
+  border-style: inset;
+  background-color: rgba(255, 204, 255, .9);
+}
+
+.about-card p, .about-card h2 {
+  color: darkslategrey;
+}
+
+.project-card {
+  position: relative;
+  border: 1px;
+  border-radius: 20% 15px 15px;
+  background-color: var(--secondary);
+  padding: 20px;
+  margin-bottom: 50px;
+}
+
+.project-card img {
+  border-radius: 60px 0 0 0;
+  max-width: 300px;
+  min-height: 160px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.project-label {
+  z-index: 5;
+  background-color: rgba(153, 0, 153, .8);
+  padding: 10px 20px 5px;
+  bottom: 100;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
