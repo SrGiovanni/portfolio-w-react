@@ -16,9 +16,9 @@ Come and peruse my portfolio!
 
 ## Usage
 
-You can visit my portfolio at: [netlify, without a](https://62a1765950c732197e3887f2--jovial-torrone-9d2ddb.netlify.app/)
+You can visit my portfolio: [deployed on netlify](https://62a1765950c732197e3887f2--jovial-torrone-9d2ddb.netlify.app/)
 
-![](src%5Cassets%5CprojectImgs%5Cscreenshoot1.PNG)
+![there should be a screenshot here](src/assets/projectImgs/screenshoot1.PNG)
 
 ## Technologies
 
